@@ -66,6 +66,17 @@ namespace Test
                 Assert.Fail("Инициализация номера первого игрока производится неверно.");
         }
 
+        [TestMethod]
+        public void TestMethodWhoFirst2()
+        {
+            Game game;
+            game = new Game();
+
+            game.setWhoFirst(2);
+            if (game.getWhoFirst() != 2)
+                Assert.Fail("Метод setWhoFirst неверно устанавливает значение.");
+        }
+
 
     }
 }
