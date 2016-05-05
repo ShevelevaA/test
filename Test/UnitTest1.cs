@@ -77,6 +77,17 @@ namespace Test
                 Assert.Fail("Метод setWhoFirst неверно устанавливает значение.");
         }
 
+        [TestMethod]
+        public void TestMethodWhoFirst3()
+        {
+            Game game;
+            game = new Game();
+
+            game.setWhoFirst(1);
+            if (game.getWhoFirst() != 1)
+                Assert.Fail("Метод setWhoFirst неверно устанавливает значение либо getWhoFirst неверно его возвращает.");
+        }
+
 
     }
 }
