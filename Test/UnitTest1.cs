@@ -118,6 +118,20 @@ namespace Test
             }
         }
 
+        [TestMethod]
+        public void TestMethodfirstHodUser()
+        {
+            Game game;
+            int[][] matr;
+            game = new Game();
+
+            game.hodUser(1, 0);
+            matr = game.getMatr();
+            if (matr[1][0] != 2)
+            {
+                Assert.Fail("Метод hodUser неверно устанавливает значение.");
+            }
+        }
 
     }
 }
