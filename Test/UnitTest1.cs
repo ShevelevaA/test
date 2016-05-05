@@ -55,5 +55,17 @@ namespace Test
             }
         }
 
+
+        [TestMethod]
+        public void TestMethodWhoFirst()
+        {
+            Game game;
+            game = new Game();
+
+            if (game.getWhoFirst() != 2)
+                Assert.Fail("Инициализация номера первого игрока производится неверно.");
+        }
+
+
     }
 }
