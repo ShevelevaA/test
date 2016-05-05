@@ -103,6 +103,21 @@ namespace Test
             }
         }
 
+        [TestMethod]
+        public void TestMethodifNull()
+        {
+            Game game;
+            int[][] matr;
+            game = new Game();
+
+            game.initMatr();
+            matr = game.getMatr();
+            if (!game.ifNull(0, 1))
+            {
+                Assert.Fail("Метод ifNull возвращает неверное значение.");
+            }
+        }
+
 
     }
 }
