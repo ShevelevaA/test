@@ -88,6 +88,21 @@ namespace Test
                 Assert.Fail("Метод setWhoFirst неверно устанавливает значение либо getWhoFirst неверно его возвращает.");
         }
 
+        [TestMethod]
+        public void TestMethodfirstHodComp()
+        {
+            Game game;
+            int[][] matr;
+            game = new Game();
+
+            game.hodComp(1, 0);
+            matr = game.getMatr();
+            if (matr[1][0] != 1)
+            {
+                Assert.Fail("Метод hodComp неверно устанавливает значение.");
+            }
+        }
+
 
     }
 }
