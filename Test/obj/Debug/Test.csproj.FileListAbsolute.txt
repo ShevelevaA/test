@@ -1,0 +1,14 @@
+C:\Users\lena\Desktop\тестирование\test_tdd\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\lena\Desktop\тестирование\test_tdd\Test\bin\Debug\Test.dll
+C:\Users\lena\Desktop\тестирование\test_tdd\Test\bin\Debug\Test.pdb
+C:\Users\lena\Desktop\тестирование\test_tdd\Test\bin\Debug\test_tdd.exe
+C:\Users\lena\Desktop\тестирование\test_tdd\Test\bin\Debug\test_tdd.pdb
+C:\Users\lena\Desktop\тестирование\test_tdd\Test\obj\Debug\Test.dll
+C:\Users\lena\Desktop\тестирование\test_tdd\Test\obj\Debug\Test.pdb
+C:\Users\lena\Desktop\тестирование\4\test_tdd\Test\bin\Debug\Test.dll
+C:\Users\lena\Desktop\тестирование\4\test_tdd\Test\bin\Debug\Test.pdb
+C:\Users\lena\Desktop\тестирование\4\test_tdd\Test\bin\Debug\test_tdd.exe
+C:\Users\lena\Desktop\тестирование\4\test_tdd\Test\bin\Debug\test_tdd.pdb
+C:\Users\lena\Desktop\тестирование\4\test_tdd\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\lena\Desktop\тестирование\4\test_tdd\Test\obj\Debug\Test.dll
+C:\Users\lena\Desktop\тестирование\4\test_tdd\Test\obj\Debug\Test.pdb
