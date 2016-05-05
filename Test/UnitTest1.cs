@@ -34,8 +34,26 @@ namespace Test
             matr = game.getMatr();
             if (matr[0][1] != 0)
                 Assert.Fail("Матрица инициализирована неверно.");
-        }      
+        }
 
+        [TestMethod]
+        public void TestMethodGoodInitMatrix()
+        {
+            Game game;
+            int[][] matr;
+
+            game = new Game();
+            game.initMatr();
+            matr = game.getMatr();
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                    if (matr[i][j] != 0)
+                    {
+                        Assert.Fail("Матрица инициализирована неверно.");
+                    }
+            }
+        }
 
     }
 }
