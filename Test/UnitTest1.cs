@@ -248,7 +248,7 @@ namespace Test
 
         //Нападение компьютера
         [TestMethod]
-        public void TestMethoduserWin()
+        public void TestMethodcompNapad()
         {
             Game game;
 
@@ -256,19 +256,19 @@ namespace Test
             game = new Game();
 
             matr = game.getMatr();
+            
+            matr[0][0] = 1;
+           
+            game.napad147();
 
-            matr[0][0] = 2;
-            matr[2][0] = 2; // cherta = 1, cell = 2
-
-            if (!game.winUser2())
+            if (matr[0][2] != 1)
             {
-                Assert.Fail("Метод compWin неверно определяет выигрышную комбинацию на поле.");
+                Assert.Fail("Метод napad147 неверно устанавливает ход.");
             }
         }
 
-        // Проверка выигрышных комбинаций компьютера
         [TestMethod]
-        public void TestMethoduserWin()
+        public void TestMethodcompNapad2()
         {
             Game game;
 
@@ -277,12 +277,79 @@ namespace Test
 
             matr = game.getMatr();
 
-            matr[0][0] = 2;
-            matr[2][0] = 2; // cherta = 1, cell = 2
+            matr[2][2] = 1;
 
-            if (!game.winUser2())
+            game.napad159();
+
+            if (matr[0][0] != 1)
             {
-                Assert.Fail("Метод compWin неверно определяет выигрышную комбинацию на поле.");
+                Assert.Fail("Метод napad159 неверно устанавливает ход.");
+            }
+        }
+
+        public void TestMethodcompNapad3()
+        {
+            Game game;
+
+            int[][] matr;
+            game = new Game();
+
+            matr = game.getMatr();
+
+            matr[2][2] = 1;
+            matr[0][0] = 1;
+
+            game.napad159();
+
+            if (matr[1][1] != 1)
+            {
+                Assert.Fail("Метод napad159 неверно устанавливает ход.");
+            }
+        }
+
+        // Проверка текста сообщения о выигрыше
+        [TestMethod]
+        public void TestMethodtextWin()
+        {
+            Game game;
+            
+            game = new Game();
+
+            game.win = 1;
+
+            if (game.textWinner() != "Компьютер выиграл!")
+            {
+                Assert.Fail("Метод textWinner возвращает невеное сообщение: " + game.textWinner());
+            }
+        }
+
+        [TestMethod]
+        public void TestMethodtextWin2()
+        {
+            Game game;
+
+            game = new Game();
+
+            game.win = 2;
+
+            if (game.textWinner() != "Вы победили!")
+            {
+                Assert.Fail("Метод textWinner возвращает невеное сообщение.");
+            }
+        }
+
+        [TestMethod]
+        public void TestMethodtextWin3()
+        {
+            Game game;
+
+            game = new Game();
+
+            game.win = 3;
+
+            if (game.textWinner() != "Ничья!")
+            {
+                Assert.Fail("Метод textWinner возвращает невеное сообщение.");
             }
         }
 
