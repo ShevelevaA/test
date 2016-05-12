@@ -1,7 +1,16 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+//using System.Drawing;
+
 using test_tdd;
+
+//using System.Windows.Forms;
+
+
 
 
 namespace Test
@@ -130,6 +139,150 @@ namespace Test
             if (matr[1][0] != 2)
             {
                 Assert.Fail("Метод hodUser неверно устанавливает значение.");
+            }
+        }
+
+       // Проверка выигрышных комбинаций пользователя
+        [TestMethod]
+        public void TestMethoduserWin()
+        {
+            Game game;
+
+            int[][] matr;
+            game = new Game();
+
+            matr = game.getMatr();
+
+            matr[0][0] = 2;
+            matr[2][0] = 2; // cherta = 1, cell = 2
+
+            if (!game.winUser2())
+            {
+                Assert.Fail("Метод userWin неверно определяет выигрышную комбинацию на поле.");
+            }
+        }
+
+        [TestMethod] 
+        public void TestMethoduserWin2()
+        {
+            Game game;
+                       
+            int[][] matr;
+            game = new Game();
+            
+            matr = game.getMatr();
+           
+            matr[0][0] = 2;
+            matr[0][1] = 2; // cherta = 4, cell = 7
+
+            if (!game.winUser7())
+            {
+                Assert.Fail("Метод userWin неверно определяет выигрышную комбинацию на поле.");
+            }
+        }
+
+
+        [TestMethod]
+        public void TestMethoduserWinCherta()
+        {
+            Game game;
+
+            int[][] matr;
+            game = new Game();
+
+            matr = game.getMatr();
+
+            matr[0][0] = 2;
+            matr[2][0] = 2; // cherta = 1, cell = 2
+            
+            game.winUser2();
+
+            if (game.cherta != 1)
+            {
+                Assert.Fail("Метод userWin неверно отрисовывет выигрышную комбинацию (cherta = " + game.cherta + ", должно быть 1 ).");
+            }
+        }
+
+        [TestMethod]
+        public void TestMethoduserWinCherta2()
+        {
+            Game game;
+
+            int[][] matr;
+            game = new Game();
+
+            matr = game.getMatr();
+
+            matr[0][0] = 2;
+            matr[0][1] = 2; // cherta = 4, cell = 7
+
+            game.winUser7();
+
+            if (game.cherta != 4)
+            {
+                Assert.Fail("Метод userWin неверно отрисовывет выигрышную комбинацию (cherta = " + game.cherta + ", должно быть 4 ).");
+            }
+        }
+
+        [TestMethod]
+        public void TestMethoduserWinCherta3()
+        {
+            Game game;
+
+            int[][] matr;
+            game = new Game();
+
+            matr = game.getMatr();
+
+            matr[0][2] = 2;
+            matr[2][0] = 2; // cherta = 8, cell = 5
+
+            game.winUser5();
+
+            if (game.cherta != 8)
+            {
+                Assert.Fail("Метод userWin неверно отрисовывет выигрышную комбинацию (cherta = " + game.cherta + ", должно быть 8 ).");
+            }
+        }
+
+
+        //Нападение компьютера
+        [TestMethod]
+        public void TestMethoduserWin()
+        {
+            Game game;
+
+            int[][] matr;
+            game = new Game();
+
+            matr = game.getMatr();
+
+            matr[0][0] = 2;
+            matr[2][0] = 2; // cherta = 1, cell = 2
+
+            if (!game.winUser2())
+            {
+                Assert.Fail("Метод compWin неверно определяет выигрышную комбинацию на поле.");
+            }
+        }
+
+        // Проверка выигрышных комбинаций компьютера
+        [TestMethod]
+        public void TestMethoduserWin()
+        {
+            Game game;
+
+            int[][] matr;
+            game = new Game();
+
+            matr = game.getMatr();
+
+            matr[0][0] = 2;
+            matr[2][0] = 2; // cherta = 1, cell = 2
+
+            if (!game.winUser2())
+            {
+                Assert.Fail("Метод compWin неверно определяет выигрышную комбинацию на поле.");
             }
         }
 
